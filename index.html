@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DailyKit — All-in-One Smart Everyday Utility Toolkit</title>
+  <meta name="description" content="DailyKit is an offline-first all-in-one utility toolkit for Android featuring smart calculators, unit converters, QR/barcode tools, and everyday productivity helpers." />
+  <style>
+    :root {
+      --bg: #090D16;
+      --surface: #111827;
+      --surface-alt: #162033;
+      --border: #1F2937;
+      --primary: #3B82F6;
+      --primary-hover: #2563EB;
+      --accent: #10B981;
+      --text: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --muted: #9CA3AF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem 3rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1.25rem 3.25rem;
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, rgba(9, 13, 22, 0) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #60A5FA;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.15rem;
+    }
+
+    .brand-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+    }
+
+    .brand-title span {
+      color: var(--primary);
+    }
+
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+      max-width: 680px;
+      margin: 0 auto 1rem;
+      line-height: 1.35;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      max-width: 660px;
+      margin: 0 auto 2rem;
+      font-size: 1.02rem;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.7rem 1.45rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .brand-title {
+        font-size: 2.15rem;
+      }
+      h1 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.6rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .card h2 {
+      color: #60A5FA;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+    }
+
+    .data-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .data-section h2 {
+      font-size: 1.35rem;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }
+
+    .data-section p {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #60A5FA;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Android App &bull; English &amp; বাংলা</div>
+      <div class="brand-title">Daily<span>Kit</span></div>
+      <h1>All-in-One Smart Everyday Utility Toolkit</h1>
+      <p>
+        DailyKit brings essential daily calculators, unit converters, QR &amp; barcode tools, and offline productivity utilities together in one fast, lightweight Android application.
+      </p>
+      <div class="cta-group">
+        <a href="https://play.google.com/store/apps/details?id=com.nlab.dailykit" class="btn btn-primary" target="_blank" rel="noopener">Get it on Google Play</a>
+        <a href="/privacy-policy.html" class="btn btn-outline">Privacy Policy</a>
+      </div>
+    </header>
+
+    <section class="features-grid" aria-label="Key Features">
+      <div class="card">
+        <h2>Smart Daily Calculators</h2>
+        <p>Perform quick percentage, discount, age, BMI, EMI, and everyday financial calculations with instant, accurate results.</p>
+      </div>
+
+      <div class="card">
+        <h2>Unit &amp; Measurement Converters</h2>
+        <p>Convert length, weight, temperature, area, volume, speed, and digital storage units effortlessly in both English and Bangla.</p>
+      </div>
+
+      <div class="card">
+        <h2>QR Code &amp; Text Utilities</h2>
+        <p>Generate and scan QR codes, format text, and access handy pocket tools without switching between multiple apps.</p>
+      </div>
+
+      <div class="card">
+        <h2>100% Offline-First &amp; Lightweight</h2>
+        <p>Designed to launch instantaneously and work reliably offline with clean Dark and Light themes.</p>
+      </div>
+    </section>
+
+    <section class="data-section" aria-labelledby="privacy-summary">
+      <h2 id="privacy-summary">Privacy-First Design</h2>
+      <p>
+        DailyKit processes all calculations, conversions, and utility entries locally on your device. No account registration is required, and your personal inputs are never uploaded to external servers.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2026 NLab. All rights reserved. &bull;
+        <a href="/privacy-policy">Privacy Policy</a> &bull;
+        Contact: <a href="mailto:support@nlab.click">support@nlab.click</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
